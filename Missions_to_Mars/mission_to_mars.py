@@ -37,10 +37,10 @@ def scrape():
     # cleaning the table, removing first line and renaming columns
     df = df.iloc[1:]
     df.columns = ["Desciption", "Mars", "Earth"]
-    df.reset_index(drop=True, inplace=True)
+    
 
     # exporting html code for table after cleaning 
-    html_table = df.to_html(justify="left", classes="table table-striped")
+    html_table = df.to_html(index=False, justify="left", classes="table table-striped")
 
     # browser for next url,
     browser = Browser('chrome', **executable_path, headless=False)
