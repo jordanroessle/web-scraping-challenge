@@ -40,7 +40,7 @@ def scrape():
     df.reset_index(drop=True, inplace=True)
 
     # exporting html code for table after cleaning 
-    df.to_html("MarsVsEarth.html")
+    html_table = df.to_html(justify="left", classes="table table-striped")
 
     # browser for next url,
     browser = Browser('chrome', **executable_path, headless=False)
@@ -70,7 +70,7 @@ def scrape():
         'news_title':news_title,
         'news_p':news_p, 
         'featured_image_url':featured_image_url,
-        'html_file':"MarsVsEarth.html",
+        'table':html_table,
         'hemisphere_images':hemisphere_image_urls
     }
     return export_dic
