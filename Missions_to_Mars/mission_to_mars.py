@@ -66,12 +66,11 @@ def scrape():
         })
     browser.quit()
 
-    print(html_table)
-    return export_dic = {
+    export_dic = {
         'news_title':news_title,
         'news_p':news_p, 
-        'mars_surface':featured_image_url,
+        'featured_image_url':featured_image_url,
         'html_file':"MarsVsEarth.html",
         'hemisphere_images':hemisphere_image_urls
     }
-scrape()
+    return export_dic

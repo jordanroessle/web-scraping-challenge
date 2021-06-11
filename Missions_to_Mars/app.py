@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask, render_template, redirect
 from flask_pymongo import PyMongo
 import mission_to_mars
 
@@ -28,5 +28,5 @@ def scrape_information():
 	# return redirect to home page
 	return redirect("/")
 
-if __name__ == "__main__"
+if __name__ == "__main__":
 	app.run(debug=True)	
