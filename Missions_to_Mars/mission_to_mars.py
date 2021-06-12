@@ -12,11 +12,11 @@ def scrape():
     url = "https://redplanetscience.com/"
     browser.visit(url)
     soup = BeautifulSoup(browser.html, 'html.parser')
-    browser.quit()
 
     # grab the newest news title and paragraph 
     news_title = soup.find('div', class_ = 'content_title').text
     news_p = soup.find('div', class_ = 'article_teaser_body').text
+    browser.quit()
 
     # browser for next url, beautiful soup to grab html
     browser = Browser('chrome', **executable_path, headless=False)
